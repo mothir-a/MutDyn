@@ -1,5 +1,5 @@
 #--------------------------------------------------
-# Analysis of mutation rate dynamics
+# MRDAP: Mutation Rate Dynamics Analysis Program
 # v3.0
 # 20230120~
 # Motohiro Akashi
