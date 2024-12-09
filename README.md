@@ -1,5 +1,5 @@
 
-# MRDAP: Mutation Rate Dynamics Analysis Program
+# MutDyn: Mutation Rate Dynamics Analysis Program
 
 ## Script Name
 **Script:** mutation_rate_dynamics.py
@@ -11,7 +11,7 @@
 **Author:** Motohiro Akashi
 
 ## About
-Mutations play a key role in the evolution of organisms and viruses. Traditional evolutionary simulations have often overlooked the dynamics of mutation rates, focusing instead on traits and adaptations. The disparity mutagenesis model highlights the conservation of duplicated genetic information through unequal mutation rates, theoretically avoiding extinction due to intracellular damage. This model contrasts with the parity model, which assumes equal mutation rates under a constant rate. This program, MRDAP (Mutation Rate Dynamics Analysis Program), extends the investigation by analyzing the evolution of two mutation rates, which can vary between 0 and 1, using a simple simulation model. The simulation imposed no constraints on the mutation rates, emphasizing their inherent functionality.
+Mutations play a key role in the evolution of organisms and viruses. Traditional evolutionary simulations have often overlooked the dynamics of mutation rates, focusing instead on traits and adaptations. The disparity mutagenesis model highlights the conservation of duplicated genetic information through unequal mutation rates, theoretically avoiding extinction due to intracellular damage. This model contrasts with the parity model, which assumes equal mutation rates under a constant rate. This program, MutDyn (Mutation Rate Dynamics Analysis Program), extends the investigation by analyzing the evolution of two mutation rates, which can vary between 0 and 1, using a simple simulation model. The simulation imposed no constraints on the mutation rates, emphasizing their inherent functionality.
 
 ## Change Log
 - README.md was made (26th Jul 2024).
