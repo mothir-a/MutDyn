@@ -98,4 +98,4 @@ $ python mutation_rate_dynamics.py
 **Note:** You can reach out for support or questions related to the script.
 
 ## References
-NA
+- _in submission_
