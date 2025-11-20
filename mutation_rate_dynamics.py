@@ -210,7 +210,7 @@ def mutation_rate_dynamics(df, summary_df, population_max, output_mid_data_inter
 
     # Sharp Fall
     if not sharp_fall == 'off' and not sharp_fall_val == 'off':
-        if df_new['gen'] == sharp_fall:
+        if (df_new['gen'] == sharp_fall).any():
             df_new['score_1'] -= sharp_fall_val
             df_new['score_2'] -= sharp_fall_val
             df_new['score_3'] -= sharp_fall_val
