@@ -1,6 +1,6 @@
 #--------------------------------------------------
 # MRDAP: Mutation Rate Dynamics Analysis Program
-# v3.0
+# v4.0
 # 20230120~
 # Motohiro Akashi
 #--------------------------------------------------
@@ -129,7 +129,7 @@ def mutation_rate_dynamics(df, summary_df, population_max, output_mid_data_inter
     df2 = df.copy()
 
     #(Note) If you write "df1=df", df will be changed when df1 is changed.
-    df2['mut_rate'] = df2['mut1'].astype(float)
+    df2['mut_rate'] = df2['mut2'].astype(float)
 
     #set ramd_choice column
     df2['rand_choice'] = ''
@@ -378,15 +378,37 @@ def output_summary_fig(summary_df, fig_path, fig_dpi):
     # set plot area as a fig object
     fig = plt.figure(figsize = (6,10), facecolor='white')
 
+    # set rcParams
+    plt.rcParams.update({
+        'font.family': 'Helvetica',
+        'pdf.fonttype': 42,
+        'ps.fonttype': 42,
+        'axes.labelsize': 12,
+        'axes.titlesize': 12,
+        'xtick.labelsize': 12,
+        'ytick.labelsize': 12,
+        'legend.fontsize': 12,
+        'legend.frameon': False,
+        'xtick.major.size': 3,
+        'ytick.major.size': 3,
+        'xtick.major.width': 0.5,
+        'ytick.major.width': 0.5,
+        'axes.linewidth': 0.5,
+        'lines.linewidth': 1,
+        'savefig.dpi': 450,
+        'figure.figsize': (1.35, 3.35),  # 180 mm × 60 mm (Double column)
+        'figure.dpi': 300
+    })
+
     # set subplot area
     ax1 = fig.add_subplot(3, 1, 1)
     ax2 = fig.add_subplot(3, 1, 2)
     ax3 = fig.add_subplot(3, 1, 3)
 
     # set data to subplot areas
-    ax1.plot(x, y1, color='blue', label='score_total')
-    ax2.plot(x, y2, color='green', label='log10_mut_dif')
-    ax3.plot(x, y3, color='orange', label='mut_AVG')
+    ax1.plot(x, y1, color='#FEC10E', label='score_total')
+    ax2.plot(x, y2, color='#FB5707', label='log10_mut_dif')
+    ax3.plot(x, y3, color='#FD016E', label='mut_AVG')
 
     # add x label to subplot
     ax1.set_xlabel('Generation')
@@ -394,17 +416,22 @@ def output_summary_fig(summary_df, fig_path, fig_dpi):
     ax3.set_xlabel('Generation')
 
     # add y label to subplot
-    ax1.set_ylabel('Total score (average)')
-    ax2.set_ylabel('|log10(mut1/mut2)| (average)')
-    ax3.set_ylabel('log10(Mutation rate) (average)')
-
-    # set log10 y scale of ax3
-    #ax3.set_yscale('log')
+    ax1.set_ylabel('Total score')
+    ax2.set_ylabel('$log_{10}$ average\nfidelity difference')
+    ax3.set_ylabel('$log_{10}$ average\nmutation rate')
 
     # set grid
     ax1.grid(axis='both',linestyle='dotted', color='k')
     ax2.grid(axis='both',linestyle='dotted', color='k')
     ax3.grid(axis='both',linestyle='dotted', color='k')
+
+    # spines invisible
+    ax1.spines['top'].set_visible(False)
+    ax2.spines['top'].set_visible(False)
+    ax3.spines['top'].set_visible(False)
+    ax1.spines['right'].set_visible(False)
+    ax2.spines['right'].set_visible(False)
+    ax3.spines['right'].set_visible(False)
 
     # set legend
     #ax1.legend(loc = 'upper left')
@@ -580,10 +607,10 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
 
 initial_mut_rate_1 = 0.1              # mut rate 1
 initial_mut_rate_2 = 0.1              # mut rate 2
-initial_population_size = 10          # initial population size
-population_max = 50                   # under 5000 is recommended
-output_mid_data_interval = 100        # output mid df per generation
-reputation_num = 1000                 # generation
+initial_population_size = 10        # initial population size
+population_max = 50                 # under 5000 is recommended
+output_mid_data_interval = 100      # output mid df per generation
+reputation_num = 1000               # generation
 sharp_fall = 'off'                    # generation in which sharp fall occur, 'off' or int
 sharp_fall_val = 'off'                # sharp fall score, 'off' or int, lower than 99 is recommended
 mut_dif_selection = 'off'             # selection by log10 difference of mut rates, 'off' or int
