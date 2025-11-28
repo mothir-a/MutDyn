@@ -17,6 +17,7 @@ Mutations play a key role in the evolution of organisms and viruses. Traditional
 - README.md was made (26th Jul 2024).
 - Fix error caused by ambiguous truth value of a pandas Series (pandas 2.x) (20th Nov 2025).
 - Fix error in refferencing mutation rate (27th Nov 2025).
+- The file's visibility has been changed to public (28th Nov 2025).
 
 ## Development Environment
 - **conda version:** 23.5.0
