@@ -457,7 +457,7 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
                                initial_population_size,
                                population_max,
                                output_mid_data_interval,
-                               reputation_num,
+                               repetition_num,
                                sharp_fall,
                                sharp_fall_val,
                                mut_dif_selection,
@@ -493,7 +493,7 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
                                                'initial_mut_rate_2',
                                                'initial_population_size',
                                                'population_max',
-                                               'reputation_num',
+                                               'repetition_num',
                                                'sharp_fall',
                                                'sharp_fall_val',
                                                'mut_dif_selection',
@@ -511,7 +511,7 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
     initial_setting_df['initial_mut_rate_2'] = initial_mut_rate_2
     initial_setting_df['initial_population_size'] = initial_population_size
     initial_setting_df['population_max'] = population_max
-    initial_setting_df['reputation_num'] = reputation_num
+    initial_setting_df['repetition_num'] = repetition_num
     initial_setting_df['sharp_fall'] = sharp_fall
     initial_setting_df['sharp_fall_val'] = sharp_fall_val
     initial_setting_df['mut_dif_selection'] = mut_dif_selection
@@ -546,12 +546,12 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
     #initial setting for 'mutation_rate_dynamics' & number of calculation
     population_max = population_max
     output_mid_data_interval = output_mid_data_interval
-    reputation_num = reputation_num
+    repetition_num = repetition_num
     sharp_fall = sharp_fall
     mut_dif_selection = mut_dif_selection
     mut_fix = mut_fix
 
-    for value in range(reputation_num):
+    for value in range(repetition_num):
         df, summary_df = mutation_rate_dynamics(df, summary_df, population_max, output_mid_data_interval, sharp_fall, sharp_fall_val, mut_dif_selection, mut_fix)
         if df.empty == True:
             break
@@ -582,7 +582,7 @@ def run_mutation_rate_dynamics(initial_mut_rate_1,
     del date_time, dir_name, cd_path, date_time_str
     del initial_setting_df
     del initial_mut_rate_1, initial_mut_rate_2, initial_population_size
-    del population_max, output_mid_data_interval, reputation_num, sharp_fall, sharp_fall_val, mut_dif_selection, mut_fix
+    del population_max, output_mid_data_interval, repetition_num, sharp_fall, sharp_fall_val, mut_dif_selection, mut_fix
     del summary_df_path
     del summary_fig_path, fig_dpi
     del df, summary_df
@@ -610,7 +610,7 @@ initial_mut_rate_2 = 0.1              # mut rate 2
 initial_population_size = 10        # initial population size
 population_max = 50                 # under 5000 is recommended
 output_mid_data_interval = 100      # output mid df per generation
-reputation_num = 1000               # generation
+repetition_num = 1000               # generation
 sharp_fall = 'off'                    # generation in which sharp fall occur, 'off' or int
 sharp_fall_val = 'off'                # sharp fall score, 'off' or int, lower than 99 is recommended
 mut_dif_selection = 'off'             # selection by log10 difference of mut rates, 'off' or int
@@ -625,7 +625,7 @@ if __name__ == "__main__":
                                initial_population_size,
                                population_max,
                                output_mid_data_interval,
-                               reputation_num,
+                               repetition_num,
                                sharp_fall,
                                sharp_fall_val,
                                mut_dif_selection,
