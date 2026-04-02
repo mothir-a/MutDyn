@@ -18,6 +18,7 @@ Mutations play a key role in the evolution of organisms and viruses. Traditional
 - Fix error caused by ambiguous truth value of a pandas Series (pandas 2.x) (20th Nov 2025).
 - Fix error in refferencing mutation rate (27th Nov 2025).
 - The file's visibility has been changed to public (28th Nov 2025).
+- Fix typo in parameter name: reputation_num → repetition_num (2nd Apr 2026).
 
 ## Development Environment
 - **conda version:** 23.5.0
@@ -51,7 +52,7 @@ $ conda install conda-forge::pandas
 - initial_population_size               : Initial population size
 - population_max                        : Max population size. Under 5000 is recommended.
 - output_mid_data_interval              : Output generation intervals of mid data.
-- reputation_num                        : Max generation.
+- repetition_num                        : Max generation.
 - sharp_fall                            : Generation in which sharp fall occur (Punctuated equilibrium), 'off' or int.
 - sharp_fall_val = 'off'                : Sharp fall score, 'off' or int. Lower than 99 is recommended.
 - mut_dif_selection                     : Selection by log10 difference of mut_rates, 'off' or int.
@@ -84,7 +85,7 @@ $ python mutation_rate_dynamics.py
                 initial_population_size = 10          # initial population size
                 population_max = 50                   # under 5000 is recommended
                 output_mid_data_interval = 100        # output mid df per generation
-                reputation_num = 1000                 # generation
+                repetition_num = 1000                 # generation
                 sharp_fall = 'off'                    # generation in which sharp fall occur, 'off' or int
                 sharp_fall_val = 'off'                # sharp fall score, 'off' or int, lower than 99 is recommended
                 mut_dif_selection = 'off'             # selection by log10 difference of mut rates, 'off' or int
