@@ -1,5 +1,5 @@
 #--------------------------------------------------
-# MRDAP: Mutation Rate Dynamics Analysis Program
+# MutDyn: Mutation Rate Dynamics Analysis Program
 # v4.0
 # 20230120~
 # Motohiro Akashi
