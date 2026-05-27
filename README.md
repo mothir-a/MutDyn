@@ -102,4 +102,4 @@ $ python mutation_rate_dynamics.py
 **Note:** You can reach out for support or questions related to the script.
 
 ## References
-- _in submission_
+- _Motohiro Akashi, Mitsuru Furusawa, Replication Fidelity Difference between Daughter Chains Persists during Evolution, Journal of Evolutionary Biology, 2026;, voag033, https://doi.org/10.1093/jeb/voag033_
